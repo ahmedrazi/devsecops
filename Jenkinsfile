@@ -1,3 +1,4 @@
+/*
 @Library('slack') _
 
 
@@ -30,7 +31,7 @@ List<Map> getStageResults( RunWrapper build ) {
         ]
     }
 }
-
+*/
 // Get information of all failed stages
 @NonCPS
 List<Map> getFailedStages( RunWrapper build ) {
@@ -41,7 +42,7 @@ List<Map> getFailedStages( RunWrapper build ) {
 
 pipeline {
   agent any
-
+/*
   environment {
     deploymentName = "devsecops"
     containerName = "devsecops-container"
@@ -50,15 +51,15 @@ pipeline {
     applicationURL="http://devsecops-demo.eastus.cloudapp.azure.com"
     applicationURI="/increment/99"
   }
-
+*/
   stages {
 
- //    stage('Build Artifact - Maven') {
- //      steps {
- //        sh "mvn clean package -DskipTests=true"
- //        archive 'target/*.jar'
- //      }
- //    }
+     stage('Build Artifact - Maven') {
+      steps {
+        sh "mvn clean package -DskipTests=true"
+        archive 'target/*.jar'
+       }
+     }
 
  //    stage('Unit Tests - JUnit and JaCoCo') {
  //      steps {
